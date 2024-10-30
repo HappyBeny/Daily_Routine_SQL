@@ -1,0 +1,9 @@
+SELECT a.MCDP_CD as "진료과 코드", count(1) as "5월 예약 건수"
+FROM
+(
+    SELECT MCDP_CD, MONTH(APNT_YMD) MONTH
+    FROM APPOINTMENT
+    HAVING MONTH = 5
+) a
+GROUP BY 1
+ORDER BY 2, 1

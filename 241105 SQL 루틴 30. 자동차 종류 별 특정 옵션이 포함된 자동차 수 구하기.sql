@@ -1,0 +1,5 @@
+SELECT CAR_TYPE, COUNT(1)
+FROM CAR_RENTAL_COMPANY_CAR 
+WHERE OPTIONS like ('%통풍시트%') or OPTIONS like ('%열선시트%') or OPTIONS like ('%가죽시트%')
+GROUP BY 1
+ORDER BY 1
