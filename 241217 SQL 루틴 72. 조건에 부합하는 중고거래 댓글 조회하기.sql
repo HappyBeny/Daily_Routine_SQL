@@ -1,0 +1,9 @@
+SELECT b.TITLE,
+       b.BOARD_ID, 
+       r.REPLY_ID, 
+       r.WRITER_ID, 
+       r.CONTENTS, 
+       DATE_FORMAT(r.CREATED_DATE, '%Y-%m-%d') as CREATED_DATE
+FROM USED_GOODS_BOARD b inner join USED_GOODS_REPLY r on b.BOARD_ID = r.BOARD_ID
+WHERE DATE_FORMAT(b.CREATED_DATE, '%Y-%m') = '2022-10'
+ORDER BY 6, 1
